@@ -1,5 +1,5 @@
 import { Sequelize } from 'sequelize-typescript';
-
+import { Pdf } from './pdf/pdf.model';
 
 export const databaseProviders = [
     {
@@ -13,7 +13,7 @@ export const databaseProviders = [
           password: '123',
           database: 'test',
         });
-        sequelize.addModels([]);
+        sequelize.addModels([Pdf]);
         await sequelize.sync();
         return sequelize;
       },

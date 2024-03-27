@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
-import { PdfModule } from './pdf/pdf.module';
-
+import { databaseProviders } from './database.providers';
 @Module({
-  imports: [PdfModule]
+  providers: [...databaseProviders],
+  exports: [...databaseProviders],
 })
 export class DatabaseModule {}
